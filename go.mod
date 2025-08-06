@@ -1,8 +1,9 @@
-module github.com/bootdotdev/learn-cicd-starter
+module github.com/hao-to/learn-cicd-starter
 
 go 1.22
 
 require (
+	github.com/bootdotdev/learn-cicd-starter v0.0.0-20250314180257-a759e37288a1
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/cors v1.2.1
 	github.com/google/uuid v1.3.0
