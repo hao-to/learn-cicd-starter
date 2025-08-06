@@ -27,7 +27,7 @@ jobs:
       - name: Generate HTML Coverage Report
         # This step creates an HTML report from the coverage.out file.
         # You can then open this HTML file in your browser.
-       run: go tool cover -html=coverage.out -o coverage.html
+        run: go tool cover -html=coverage.out -o coverage.html
 
       - name: Upload Coverage Report as Artifact
         uses: actions/upload-artifact@v4
