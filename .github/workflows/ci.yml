@@ -26,4 +26,4 @@ jobs:
             echo "===================="
             echo "Coverage Summary:"
             echo "===================="
-            grep "coverage:" coverage.txt || echo "No coverage info found.
+            grep "coverage:" coverage.txt || echo "No coverage info found."
