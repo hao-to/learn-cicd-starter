@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.0"
+
+      - name: Run Unit Test with Coverage Output
+        run: |
+            echo "Running tests with coverage..."
+            go test -cover ./... | tee coverage.txt
+            echo ""
+            echo "===================="
+            echo "Coverage Summary:"
+            echo "===================="
+            grep "coverage:" coverage.txt || echo "No coverage info found."
