@@ -28,6 +28,13 @@ jobs:
             echo "===================="
             grep "coverage:" coverage.txt || echo "No coverage info found."
 
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+      - name: Run gosec security checks
+        run: $(go env GOPATH)/bin/gosec ./...
+
+
   style:
       name: Style
       runs-on: ubuntu-latest
