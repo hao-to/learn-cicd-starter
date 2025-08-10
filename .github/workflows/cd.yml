@@ -17,6 +17,11 @@ jobs:
         with:
           go-version: '1.22'
 
+      - name: Run database migrations
+        run: goose mysql "$DATABASE_URL" up
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       - name: Build app for production
         run: ./scripts/buildprod.sh
 
